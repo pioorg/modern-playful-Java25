@@ -42,7 +42,7 @@ public class EnterpriseySearcher {
     private static final int TOP_K = 5;
 
     public static void main(String[] args) {
-//            List<String> queries = obtainQueries();
+//        List<String> queries = obtainQueries();
         List<String> queries = List.of("orange", "apple", "Heckscheibenwaschanlage", "computer", "basket");
 
         try (RestClient restClient = RestClient.builder(HttpHost.create(System.getenv("ES_URL")))
@@ -65,12 +65,9 @@ public class EnterpriseySearcher {
 
     static List<String> obtainQueries() {
         List<String> queries = new ArrayList<>();
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter text to search: ");
         String searchText;
-        while (!(searchText = scanner.nextLine()).isBlank()) {
+        while (!(searchText = IO.readln("Enter text to search: ")).isBlank()) {
             queries.add(searchText);
-            System.out.print("Enter text to search: ");
         }
         return queries;
     }
