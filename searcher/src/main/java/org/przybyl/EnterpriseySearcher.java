@@ -37,8 +37,8 @@ public class EnterpriseySearcher {
     private static final int TOP_K = 5;
 
     public static void main(String[] args) {
-        List<String> queries = obtainQueries();
-//        List<String> queries = List.of("orange", "apple", "Heckscheibenwaschanlage", "computer", "basket");
+//        List<String> queries = obtainQueries();
+        List<String> queries = List.of("orange", "apple", "Heckscheibenwaschanlage", "computer", "basket");
 
         try (var esClient = ElasticsearchClient.of(b -> b
             .host(System.getenv("ES_URL"))
