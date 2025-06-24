@@ -6,7 +6,7 @@ classic text searches in Elasticsearch, and then combines the results using Reci
 
 ## Prerequisites
 
-- Java 24 or higher
+- Java 25 or higher
 - Maven
 
 ## Setup
